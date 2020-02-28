@@ -23,8 +23,8 @@ DisplayHandler::~DisplayHandler()
 void DisplayHandler::Init(Queues *newQueues)
 {
 	allQueues = newQueues;
-
 	int displayLoopCounter;
+
 	// Setup the Chip Select pins for the displays
 	for(int displayLoopCounter=0; displayLoopCounter<NUMBER_OF_TFT_DISPLAYS; displayLoopCounter++)
 	{
@@ -73,7 +73,6 @@ void DisplayHandler::LoadNewScreen(ScreenTypes newScreenType, int screenLocation
 
 	screenPositions[screenLocation].UpdateCurentScreen = NULL;
 	screenPositions[screenLocation].UpdateCurentScreenOnInterval = NULL;
-	//HandleTouchPoint = NULL;
 
 	switch (newScreenType) {
 	case ScreenTypes::SplashScreen:
@@ -121,15 +120,5 @@ void DisplayHandler::DispatchCommand()
 			break;
 		}
 		yield();
-	}
-}
-
-void DisplayHandler::UnloadOldDataFromDisplayQueue()
-{
-	while (!allQueues->displayQueue.isEmpty())
-	{
-		portENTER_CRITICAL(&allQueues->displayQueueMux);
-		allQueues->displayQueue.dequeue();
-		portEXIT_CRITICAL(&allQueues->displayQueueMux);
 	}
 }

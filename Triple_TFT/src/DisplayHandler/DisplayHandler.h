@@ -22,15 +22,12 @@ class DisplayHandler
 {
 private:
 	TFT_eSPI tftDisplay;
-	ScreenDefinition screenPositions[3];
+	ScreenDefinition screenPositions[NUMBER_OF_TFT_DISPLAYS];
 	Queues *allQueues;
 
 	void DispatchCommand();
-
 	void LoadNewScreen(ScreenTypes newScreenType, int screenLocation);
 	
-	void UnloadOldDataFromDisplayQueue();
-
 public:
 	DisplayHandler();
 	~DisplayHandler();
