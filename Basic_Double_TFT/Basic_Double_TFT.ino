@@ -38,7 +38,7 @@ void setup() {
 
   /*
    Update the first screen
-   and 'tft.' call must be done
+   all 'tft.' call must be done
    after setting the cs pin low
   */
   digitalWrite(firstScreenCS, LOW);
