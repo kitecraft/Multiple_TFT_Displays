@@ -9,9 +9,7 @@
 DisplayHandler::DisplayHandler()
 {
 	screenPositions[FIRST_SCREEN].cs_pin = FIRST_SCREEN_CS;
-
 	screenPositions[SECOND_SCREEN].cs_pin = SECOND_SCREEN_CS;
-
 	screenPositions[THIRD_SCREEN].cs_pin = THIRD_SCREEN_CS;
 }
 
@@ -33,6 +31,7 @@ void DisplayHandler::Init(Queues *newQueues)
 	}
 
 	tftDisplay.init();
+	tftDisplay.setRotation(0);
 	tftDisplay.fillScreen(TFT_BLACK);
 
 	for(int displayLoopCounter=0; displayLoopCounter<NUMBER_OF_TFT_DISPLAYS; displayLoopCounter++)
@@ -48,10 +47,7 @@ void DisplayHandler::Run()
 	uint16_t x, y;
 	while (true)
 	{
-	
-		DispatchCommand();
-
-		
+		DispatchCommand();		
 		for(counter = 0;counter <= NUMBER_OF_TFT_DISPLAYS; counter++)
 		{
 			if (screenPositions[counter].UpdateCurentScreenOnInterval != NULL)

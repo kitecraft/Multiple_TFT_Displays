@@ -15,7 +15,6 @@ struct ScreenDefinition
 	void(*UpdateCurentScreen)(String value) = NULL;
 	void(*UpdateCurentScreenOnInterval)() = NULL;
 	void(*DestroyCurrentScreen)() = NULL;
-
 };
 
 class DisplayHandler
