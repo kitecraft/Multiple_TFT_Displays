@@ -37,8 +37,9 @@ void HS_SplashScreen::AnalogMeter()
 {
 	// Meter outline
 	TFT->fillRect(0, 0, M_SIZE*239, M_SIZE*126, TFT_GREY);
-	//TFT->fillRect(5, 3, M_SIZE*230, M_SIZE*119, TFT_BLUE);
-	TFT->fillRect(5, 3, M_SIZE*230, M_SIZE*119, TFT_WHITE);
+	
+	TFT->fillRect(5, 3, M_SIZE*230, M_SIZE*119, TFT_BLUE);
+	//TFT->fillRect(5, 3, M_SIZE*230, M_SIZE*119, TFT_WHITE);
 
 	TFT->setTextColor(TFT_BLACK);  // Text colour
 
@@ -166,12 +167,12 @@ void HS_SplashScreen::PlotNeedle(int value, byte ms_delay)
 		float tx = tan((sdeg + 90) * 0.0174532925);
 
 		// Erase old needle image
-		//TFT->drawLine(M_SIZE*(120 + 20 * ltx - 1), M_SIZE*(140 - 20), osx - 1, osy, TFT_BLUE);
-		//TFT->drawLine(M_SIZE*(120 + 20 * ltx), M_SIZE*(140 - 20), osx, osy, TFT_BLUE);
-		//TFT->drawLine(M_SIZE*(120 + 20 * ltx + 1), M_SIZE*(140 - 20), osx + 1, osy, TFT_BLUE);
-		TFT->drawLine(M_SIZE*(120 + 20 * ltx - 1), M_SIZE*(140 - 20), osx - 1, osy, TFT_WHITE);
-		TFT->drawLine(M_SIZE*(120 + 20 * ltx), M_SIZE*(140 - 20), osx, osy, TFT_WHITE);
-		TFT->drawLine(M_SIZE*(120 + 20 * ltx + 1), M_SIZE*(140 - 20), osx + 1, osy, TFT_WHITE);
+		TFT->drawLine(M_SIZE*(120 + 20 * ltx - 1), M_SIZE*(140 - 20), osx - 1, osy, TFT_BLUE);
+		TFT->drawLine(M_SIZE*(120 + 20 * ltx), M_SIZE*(140 - 20), osx, osy, TFT_BLUE);
+		TFT->drawLine(M_SIZE*(120 + 20 * ltx + 1), M_SIZE*(140 - 20), osx + 1, osy, TFT_BLUE);
+		//TFT->drawLine(M_SIZE*(120 + 20 * ltx - 1), M_SIZE*(140 - 20), osx - 1, osy, TFT_WHITE);
+		//TFT->drawLine(M_SIZE*(120 + 20 * ltx), M_SIZE*(140 - 20), osx, osy, TFT_WHITE);
+		//TFT->drawLine(M_SIZE*(120 + 20 * ltx + 1), M_SIZE*(140 - 20), osx + 1, osy, TFT_WHITE);
 
 		// Re-plot text under needle
 		TFT->setTextColor(TFT_BLACK);

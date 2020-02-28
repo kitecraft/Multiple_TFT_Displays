@@ -48,9 +48,9 @@ void setup() {
 		&Display_Core_Task_Handle,                 /* pxCreatedTask */
 		0);
 
-	allQueues.AddItemToDisplayQueue(DisplayCommands::ChangeScreen, String(ScreenTypes::SplashScreen), FIRST_SCREEN);
+    allQueues.AddItemToDisplayQueue(DisplayCommands::ChangeScreen, String(ScreenTypes::Matrix_ScreenType), FIRST_SCREEN);
 	allQueues.AddItemToDisplayQueue(DisplayCommands::ChangeScreen, String(ScreenTypes::Pong_ScreenType), SECOND_SCREEN);
-    allQueues.AddItemToDisplayQueue(DisplayCommands::ChangeScreen, String(ScreenTypes::Matrix_ScreenType), THIRD_SCREEN);
+	allQueues.AddItemToDisplayQueue(DisplayCommands::ChangeScreen, String(ScreenTypes::SplashScreen), THIRD_SCREEN);
 }
 
 

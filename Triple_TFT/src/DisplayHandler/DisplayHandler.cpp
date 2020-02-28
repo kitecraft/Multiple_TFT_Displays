@@ -44,19 +44,17 @@ void DisplayHandler::Init(Queues *newQueues)
 void DisplayHandler::Run()
 {
 	int counter = 0;
-	uint16_t x, y;
 	while (true)
 	{
-		DispatchCommand();		
+		DispatchCommand();
 		for(counter = 0;counter <= NUMBER_OF_TFT_DISPLAYS; counter++)
 		{
 			if (screenPositions[counter].UpdateCurentScreenOnInterval != NULL)
 			{
 				screenPositions[counter].UpdateCurentScreenOnInterval();
-				yield();
 			}
 		}
-		delay(1);
+    	vTaskDelay(pdMS_TO_TICKS(1));
 	}
 }
 

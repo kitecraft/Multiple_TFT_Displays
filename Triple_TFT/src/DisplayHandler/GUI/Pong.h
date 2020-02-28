@@ -17,7 +17,7 @@ private:
 	//HS_Theme pongTheme;
 
 	unsigned long lastUpdate = 0;
-	int updateScreenInterval = 2;
+	int updateScreenInterval = 0;
 
 
     int16_t h = 240;
