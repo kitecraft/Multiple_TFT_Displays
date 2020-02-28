@@ -1,5 +1,5 @@
 # Multiple_TFT_Displays
-Using multiple dipslays with Bodmers TFT_ESPI library for the esp32
+Using multiple TFT displays with Bodmers TFT_ESPI library for the ESP32
 https://github.com/Bodmer/TFT_eSPI
 
 There are 2 examples here.  
