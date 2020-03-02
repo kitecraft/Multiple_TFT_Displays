@@ -2,7 +2,7 @@
 
 HS_Matrix_Screen::HS_Matrix_Screen(Queues *newQueues, TFT_eSPI* newTFT, int chipSelectPin) : HS_ScreenBase(newQueues, newTFT, chipSelectPin)
 {
-	screenRotation = 2;
+	screenRotation = 0;
 
     randomSeed(analogRead(A0));
     PrepDisplayForUpdate();

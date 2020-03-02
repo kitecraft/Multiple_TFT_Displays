@@ -2,7 +2,7 @@
 
 HS_PongScreen::HS_PongScreen(Queues *newQueues, TFT_eSPI* newTFT, int chipSelectPin) : HS_ScreenBase(newQueues, newTFT, chipSelectPin)
 {
-	screenRotation = 1;
+	screenRotation = 3;
     PrepDisplayForUpdate();
     TFT->fillScreen(TFT_BLACK);
     
