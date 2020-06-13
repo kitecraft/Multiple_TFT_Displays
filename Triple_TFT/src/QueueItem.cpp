@@ -3,7 +3,7 @@
 
 Queues::Queues()
 {
-	DataQueue<DISPLAY_QUEUE_ITEM> displayQueue(20);
+	ArduinoQueue<DISPLAY_QUEUE_ITEM> displayQueue(20);
 
     displayQueueMux = portMUX_INITIALIZER_UNLOCKED;
 }

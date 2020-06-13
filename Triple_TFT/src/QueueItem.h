@@ -1,6 +1,6 @@
 #pragma once
 #include <Arduino.h>
-#include <Queue.h>
+#include <ArduinoQueue.h>
 #include "freertos/portmacro.h"
 
 
@@ -17,7 +17,7 @@ private:
 public:
 	Queues();
 	~Queues();
-	DataQueue<DISPLAY_QUEUE_ITEM> displayQueue;
+	ArduinoQueue<DISPLAY_QUEUE_ITEM> displayQueue;
 
 	portMUX_TYPE displayQueueMux;
 
