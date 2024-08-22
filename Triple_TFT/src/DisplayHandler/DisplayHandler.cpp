@@ -24,7 +24,7 @@ void DisplayHandler::Init(Queues *newQueues)
 	int displayLoopCounter;
 
 	// Setup the Chip Select pins for the displays
-	for(int displayLoopCounter=0; displayLoopCounter<NUMBER_OF_TFT_DISPLAYS; displayLoopCounter++)
+	for(int displayLoopCounter = 0; displayLoopCounter < NUMBER_OF_TFT_DISPLAYS; displayLoopCounter++)
 	{
 		pinMode(screenPositions[displayLoopCounter].cs_pin, OUTPUT);
 		digitalWrite(screenPositions[displayLoopCounter].cs_pin, LOW);
@@ -34,7 +34,7 @@ void DisplayHandler::Init(Queues *newQueues)
 	tftDisplay.setRotation(0);
 	tftDisplay.fillScreen(TFT_BLACK);
 
-	for(int displayLoopCounter=0; displayLoopCounter<NUMBER_OF_TFT_DISPLAYS; displayLoopCounter++)
+	for(int displayLoopCounter = 0; displayLoopCounter < NUMBER_OF_TFT_DISPLAYS; displayLoopCounter++)
 	{
 		digitalWrite(screenPositions[displayLoopCounter].cs_pin, HIGH);
 	}
@@ -47,7 +47,7 @@ void DisplayHandler::Run()
 	while (true)
 	{
 		DispatchCommand();
-		for(counter = 0;counter <= NUMBER_OF_TFT_DISPLAYS; counter++)
+		for(counter = 0; counter < NUMBER_OF_TFT_DISPLAYS; counter++)
 		{
 			if (screenPositions[counter].UpdateCurentScreenOnInterval != NULL)
 			{
